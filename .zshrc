@@ -145,3 +145,12 @@ export PATH="$(pyenv root)/shims:${PATH}"
 if [ -f .nvmrc ]; then
   nvm use
 fi
+
+alias meta="export https_proxy=http://127.0.0.1:7894 http_proxy=http://127.0.0.1:7894 all_proxy=socks5://127.0.0.1:7894"
+
+# 如果 mac 设置中的代理打开，那么就使用代理
+# mac 检查代理状态的命令是 networksetup -getwebproxy Wi-Fi
+if networksetup -getwebproxy Wi-Fi | grep "Enabled: Yes" > /dev/null; then
+  echo "mac 代理已经打开"
+  proxy
+fi
