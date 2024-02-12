@@ -110,6 +110,7 @@ export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
 
 # Clash 代理地址
 alias proxy="export https_proxy=http://127.0.0.1:7893 http_proxy=http://127.0.0.1:7893 all_proxy=socks5://127.0.0.1:7893"
+alias unproxy="unset https_proxy http_proxy all_proxy"
 
 alias macproxy="export https_proxy=http://192.168.1.123:7890 http_proxy=http://192.168.1.123:7890 all_proxy=socks5://192.168.1.123:7891"
 
@@ -149,8 +150,11 @@ fi
 alias meta="export https_proxy=http://127.0.0.1:7894 http_proxy=http://127.0.0.1:7894 all_proxy=socks5://127.0.0.1:7894"
 
 # 如果 mac 设置中的代理打开，那么就使用代理
-# mac 检查代理状态的命令是 networksetup -getwebproxy Wi-Fi
 if networksetup -getwebproxy Wi-Fi | grep "Enabled: Yes" > /dev/null; then
-  echo "mac 代理已经打开"
-  proxy
+  echo "mac 代理已经打开, unproxy 解除代理"
+  # 获得代理地址
+  url=$(networksetup -getwebproxy Wi-Fi | grep "Server: " | awk '{print $2}')
+  port=$(networksetup -getwebproxy Wi-Fi | grep "Port: " | awk '{print $2}')
+  export https_proxy=http://$url:$port http_proxy=http://$url:$port all_proxy=socks5://$url:$port
+  echo "代理地址: $url:$port"
 fi
