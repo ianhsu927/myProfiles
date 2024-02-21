@@ -24,3 +24,11 @@ fi
 
 MacBook Pro 14 2021 内置的无线网卡不支持 160MHz 频段, 内网速度不太行而且 Mac 的无线网络稳定性也不如 Intel 和高通的无线网卡,因此外置有线网卡很有必要,但是在之前使用 Mac mini 时,我发现在使用 8156B 网卡并进行大量数据传输时会导致系统卡死,在最近用 MacBook 时没有这个问题,我也没有再去使用 Mac mini 做测试,所以不知道是不是系统问题
 RTL-8156B 瑞昱 2.5G USB 网卡,这应该是市面上唯一可以买到可以价格实惠的超千兆网卡(截止 2024.2)
+
+## 网络存储
+
+### SMB
+
+```bash
+sudo mount_smbfs //user:password@ip/appdata /Volumes/unraid-app
+```

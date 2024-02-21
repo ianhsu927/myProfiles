@@ -64,10 +64,10 @@ ZSH_THEME="robbyrussell"
 # 你是否想使用除了 $ZSH/custom 之外的其他自定义文件夹?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
+# 加载哪个插件?
+# 标准插件可以在 $ZSH/plugins/ 中找到
+# 自定义插件可以放在 $ZSH_CUSTOM/plugins/ 目录中
+# 示例格式: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
