@@ -132,3 +132,7 @@ if networksetup -getwebproxy Wi-Fi | grep "Enabled: Yes" >/dev/null; then
   export https_proxy=http://$url:$port http_proxy=http://$url:$port all_proxy=socks5://$url:$port
   echo "代理地址: $url:$port"
 fi
+
+if [ -f "./utils.sh" ]; then
+  source "./utils.sh"
+fi
