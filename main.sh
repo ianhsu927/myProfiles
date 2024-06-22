@@ -9,7 +9,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # 每次加载 oh-my-zsh 时都会加载一个随机主题,
 # 在这种情况下, 要知道加载的是哪个特定的主题, 运行: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # 设置加载随机主题时要选择的主题列表
 # 设置这个变量当 ZSH_THEME=random 时会导致 zsh 加载
@@ -69,14 +69,14 @@ ZSH_THEME="robbyrussell"
 # 自定义插件可以放在 $ZSH_CUSTOM/plugins/ 目录中
 # 示例格式: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
+source ~/my-mac/omz.sh
 # zsh 设置
 source $ZSH/oh-my-zsh.sh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # zsh 语法高亮
+# source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # zsh 语法高亮
 source ~/my-mac/brew.sh
 source ~/my-mac/node.sh
 source ~/my-mac/python.sh
+source ~/my-mac/scripts.sh
 
 # 用户设置
 
